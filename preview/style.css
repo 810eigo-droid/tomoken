@@ -33,3 +33,6 @@
 
 /* Client supplied hero photograph: preserve the main tower on narrow screens. */
 .original-variant .hero-visual img{object-position:46% center}@media(max-width:700px){.original-variant .hero-visual img{object-position:43% center}.original-variant .pair .label{font-size:11px}}
+
+/* Compact mobile hero, anchored to the photograph's top edge. */
+@media(max-width:700px){.original-variant .hero{min-height:520px}.original-variant .hero-inner{padding:46px 24px 42px}.original-variant .hero-visual img{object-position:43% top}}
