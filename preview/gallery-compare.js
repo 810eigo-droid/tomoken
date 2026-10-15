@@ -11,12 +11,12 @@ function render(mode){
  stage.replaceChildren();
  (compare?photos:[photos[paired&&mode==='after'?1:0]]).forEach(photo=>{
   const figure=document.createElement('figure'),label=document.createElement('figcaption'),img=document.createElement('img');
-  label.textContent=paired?(photo.phase==='before'?'施工前 / BEFORE':'施工後 / AFTER'):'健康宣言の証';img.src=photo.src;img.alt=photo.alt;
+  label.textContent=paired?(photo.phase==='before'?'施工前 / BEFORE':'施工後 / AFTER'):photo.alt;img.src=photo.src;img.alt=photo.alt;
   figure.append(label);
   if(compare){const button=document.createElement('button');button.type='button';button.className='gallery-photo-choice';button.setAttribute('aria-label',label.textContent+'を1枚で拡大');button.append(img);button.addEventListener('click',()=>{render(photo.phase);controls.querySelector('[data-view="'+photo.phase+'"]').focus()});figure.append(button)}else figure.append(img);
   stage.append(figure);
  });
- dialog.querySelector('.viewer-caption').textContent=compare?'写真を選ぶと、1枚ずつ大きく表示できます。':paired?(mode==='after'?'施工後を表示中':'施工前を表示中')+'。「2枚を比較」で並べて確認できます。':'株式会社友建 健康宣言の証';
+ dialog.querySelector('.viewer-caption').textContent=compare?'写真を選ぶと、1枚ずつ大きく表示できます。':paired?(mode==='after'?'施工後を表示中':'施工前を表示中')+'。「2枚を比較」で並べて確認できます。':photos[0].alt;
 }
 document.querySelectorAll('[data-lightbox]').forEach(link=>link.addEventListener('click',event=>{
  if(event.ctrlKey||event.metaKey||event.shiftKey||event.altKey||typeof dialog.showModal!=='function')return;
