@@ -21,3 +21,6 @@ h1,h2{font-family:"Tomoken Display","Noto Sans JP","Yu Gothic",Meiryo,sans-serif
 /* Keep Japanese heading phrases together on small screens. */
 .message-title .message-first,.message-title .message-last{display:block}.message-title .message-first>span{display:inline-block;white-space:nowrap}.message-title .message-last{white-space:nowrap}@media(max-width:760px){.greeting .message-title{font-size:clamp(24px,7.2vw,30px);line-height:1.55;letter-spacing:-.055em}.message-title .message-first>span{display:block}.section-heading h2{font-size:clamp(27px,7.4vw,34px)}}
 
+
+.contact-title>span{display:block;white-space:nowrap}@media(max-width:760px){.contact .section-heading .contact-title{font-size:clamp(23px,7vw,34px);line-height:1.55;letter-spacing:-.055em}}
+
